@@ -1,7 +1,9 @@
 package com.miar.tuto.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.miar.tuto.business.CryptBean;
 import com.miar.tuto.dto.Message;
 import com.miar.tuto.dto.Person;
 
@@ -9,7 +11,8 @@ import com.miar.tuto.dto.Person;
 @Service
 public class DemoMessageService implements MessageService {
 
-	
+	@Autowired
+	CryptBean crytpbean;
 	
 	public DemoMessageService() {
 		super();
@@ -26,7 +29,7 @@ public class DemoMessageService implements MessageService {
 
 	@Override
 	public String postcrypt(Message message) {
-		return "The message is : " + message.getTextToCrypt() + " - Key : " + message.getKey() + "!";
+		return crytpbean.crypt(message);
 	}
 
 	

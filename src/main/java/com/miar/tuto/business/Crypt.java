@@ -1,5 +1,10 @@
 package com.miar.tuto.business;
 
-public class Crypt {
+import com.miar.tuto.dto.Message;
 
+public interface Crypt {
+
+	public String crypt(Message message);
+	public String uncrypt(Message message);
+	
 }

@@ -35,7 +35,9 @@ class MessageController {
   //@RequestBody
   @PostMapping("/crypt")
   public String postcrypt( final Message message) {
-    return "The message is : " + message.getTextToCrypt() + " - Key : " + message.getKey();
+	  
+	  return messageService.postcrypt(message);
+	  
   }
 
   
